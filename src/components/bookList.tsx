@@ -26,7 +26,7 @@ const BookList = ({ onClick }: BookListProps) => {
 
   return (
     <div className="flex flex-col gap-5 py-10 z-10 bg-white">
-      <div className="border px-5 py-2.5 shadow-md rounded-lg sm:flex flex-col sm:flex-row gap-4 sm:items-center justify-between sticky top-28 z-20 hidden bg-[#5dbea3]">
+      <div className="border px-5 py-2.5 shadow-md rounded-lg sm:flex flex-col sm:flex-row gap-4 sm:items-center justify-between  hidden bg-[#5dbea3]">
         <div className="flex flex-row justify-between flex-[2] items-center">
           <div className="flex flex-col gap-1">
             <h1 className="text-lg sm:text-2xl tracking-wider font-semibold subpixel-antialiased text-white">
