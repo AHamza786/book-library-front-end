@@ -1,5 +1,5 @@
 export type BookProps = {
-  id: number;
+  id?: number;
   name: string;
   price: number;
   category: string;
@@ -8,6 +8,7 @@ export type BookProps = {
 
 export type BookState = {
   book: BookProps[];
+  selectedBook?: BookProps,
 };
 
 export type State = {

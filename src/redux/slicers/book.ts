@@ -4,14 +4,28 @@ import { BookState } from "../../types";
 
 const initialState: BookState = {
   book: BooksMockData,
+  selectedBook: {
+    name: "",
+    price: 0,
+    category: "",
+    description: "",
+  },
 };
 
 const bookSlice = createSlice({
   name: "book",
   initialState,
   reducers: {
-    updateBookData(state, action) {
-      return action.payload;
+    setBookData(state, action) {
+      return {
+        book: action.payload,
+      };
+    },
+    setSelectedBook(state, action) {
+      return {
+        ...state,
+        selectedBook: action.payload,
+      };
     },
     setInitailState() {
       return initialState;
@@ -19,6 +33,6 @@ const bookSlice = createSlice({
   },
 });
 
-export const { updateBookData, setInitailState } = bookSlice.actions;
+export const { setBookData, setSelectedBook, setInitailState } = bookSlice.actions;
 
 export default bookSlice.reducer;
