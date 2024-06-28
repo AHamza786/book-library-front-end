@@ -13,7 +13,7 @@ const Form = () => {
   const { isModalOpen } = useSelector((state: State) => state.modal);
   const dispatch: any = useDispatch();
 
-  const onSubmitHandler = async (values: BookProps) => {
+  const onSubmitHandler = (values: BookProps) => {
     if (selectedBook?.name) {
       const updatedBooks: BookProps[] = books?.map((book: BookProps) => {
         if (book?.id === selectedBook?.id) {
@@ -28,6 +28,14 @@ const Form = () => {
       const updatedBooks: BookProps[] = [...books, values];
       dispatch(setBookData(updatedBooks));
     }
+    dispatch(setIsModalOpen(!isModalOpen));
+  };
+
+  const onDeleteHandler = () => {
+    const updatedBooks: BookProps[] = books?.filter(
+      (book: BookProps) => book?.id !== selectedBook?.id
+    );
+    dispatch(setBookData(updatedBooks));
     dispatch(setIsModalOpen(!isModalOpen));
   };
 
@@ -46,7 +54,7 @@ const Form = () => {
       {({ handleChange, handleSubmit, touched, errors, values }) => (
         <div className="flex flex-col gap-8">
           <div className="flex justify-center font-bold text-lg">
-            {selectedBook?.name ? "Edit Book Details" : "Add Book"}
+            {selectedBook?.name ? "Modify Book Details" : "Add Book"}
           </div>
           <div className="flex flex-col gap-4">
             <input
@@ -83,7 +91,6 @@ const Form = () => {
             {touched.price && errors.price && (
               <div className="text-red-700 text-sm -mt-3">{errors.price}</div>
             )}
-            {/* <div className="relative border border-[#E7E8EC] w-full py-3 px-4 gap-3 rounded-lg"> */}
             <textarea
               id={"description"}
               placeholder={"Description"}
@@ -99,12 +106,17 @@ const Form = () => {
             )}
           </div>
           <div className="flex justify-end gap-6">
+            {selectedBook?.name && (
+              <CustomButton
+                onClick={onDeleteHandler}
+                text={"Delete Book"}
+                className={"w-32 bg-secondary hover:bg-red-500"}
+              />
+            )}
             <CustomButton
               onClick={handleSubmit}
               text={selectedBook?.name ? "Edit" : "Add"}
-              background="#5dbea3"
-              hoverBg="hover:bg-[#33b249]"
-              className={"w-28"}
+              className={"w-28 bg-primary hover:bg-primary_green"}
             />
           </div>
         </div>

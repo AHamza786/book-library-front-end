@@ -34,7 +34,7 @@ const BookCard = ({
           event.stopPropagation();
           onCheckBoxClick();
         }}
-        className="w-4 h-4 rounded accent-[#5dbea3]"
+        className="w-4 h-4 rounded accent-primary"
       />
       <div className="flex flex-row justify-between flex-[2] sm:flex-[5] lg:flex-[2] items-center">
         <div className="flex flex-col gap-1">

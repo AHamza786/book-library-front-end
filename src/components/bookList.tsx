@@ -50,9 +50,9 @@ const BookList = () => {
             id="csvFiles"
             value={selectedOption}
             onChange={handleFormatChange}
-            className="rounded-lg w-full sm:max-w-xs border border-[#5dbea3] solid outline-none py-3 px-2 self-end"
+            className="rounded-lg w-full sm:max-w-xs border border-primary solid outline-none py-3 px-2 self-end cursor-pointer"
           >
-            <option value="" className="subpixel-antialiased" disabled selected>
+            <option value="" className="subpixel-antialiased cursor-pointer" disabled selected>
               {"Sort by"}
             </option>
             <option value="ascending" id="ascending">
@@ -62,7 +62,7 @@ const BookList = () => {
               Price:Highest To Lower
             </option>
           </select>
-          <div className="border px-5 py-2.5 shadow-md rounded-lg sm:flex flex-col sm:flex-row gap-4 sm:items-center justify-between pl-[54px]  hidden bg-[#5dbea3]">
+          <div className="border px-5 py-2.5 shadow-md rounded-lg sm:flex flex-col sm:flex-row gap-4 sm:items-center justify-between pl-[54px]  hidden bg-primary">
             <div className="flex flex-row justify-between flex-[2] items-center">
               <div className="flex flex-col gap-1">
                 <h1 className="text-lg sm:text-2xl tracking-wider font-semibold subpixel-antialiased text-white">

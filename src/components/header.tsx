@@ -11,16 +11,15 @@ const Header = () => {
   const dispatch: any = useDispatch();
 
   return (
-    <div className="flex items-center flex-col gap-2 sm:flex-row justify-between pb-5 sm:py-6 px-5 rounded-full shadow-md sticky top-3 sm:top-0 z-20 bg-white">
+    <div className="flex items-center flex-col gap-2 sm:flex-row justify-between pb-5 sm:py-6 px-5 rounded-full shadow-2xl sticky top-3 sm:top-5 z-20 bg-white">
       <h1 className="text-2xl sm:text-3xl tracking-wider font-bold subpixel-antialiased">
         Book Library
       </h1>
       <div className="flex gap-4">
         {books.some((item: BookProps) => item?.isCheck === true) && (
           <CustomButton
+          className="bg-secondary"
             text="Delete Books"
-            background="#D2122E"
-            hoverBg="hover:bg-[#33b249]"
             onClick={() => {
               const updatedBooks: BookProps[] = books?.filter(
                 (book: BookProps) => book?.isCheck !== true
@@ -30,9 +29,8 @@ const Header = () => {
           />
         )}
         <CustomButton
+        className="bg-primary hover:bg-primary_green"
           text="Add Book"
-          background="#5dbea3"
-          hoverBg="hover:bg-[#33b249]"
           onClick={() => dispatch(setIsModalOpen(!isModalOpen))}
         />
       </div>
