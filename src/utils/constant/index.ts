@@ -7,6 +7,7 @@ export const BooksMockData: BookProps[] = [
     price: 10.99,
     category: "Fiction",
     description: "A novel written by American author F. Scott Fitzgerald.",
+    isCheck: false,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const BooksMockData: BookProps[] = [
     price: 12.99,
     category: "Fiction",
     description: "A novel by Harper Lee published in 1960.",
+    isCheck: false,
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ export const BooksMockData: BookProps[] = [
     price: 14.99,
     category: "Dystopian",
     description: "A novel by George Orwell, published in 1949.",
+    isCheck: false,
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ export const BooksMockData: BookProps[] = [
     price: 11.99,
     category: "Adventure",
     description: "A novel by Herman Melville, published in 1851.",
+    isCheck: false,
   },
   {
     id: 5,
@@ -35,6 +39,7 @@ export const BooksMockData: BookProps[] = [
     price: 19.99,
     category: "Historical Fiction",
     description: "A novel by Leo Tolstoy, first published from 1865 to 1869.",
+    isCheck: false,
   },
   {
     id: 6,
@@ -42,6 +47,7 @@ export const BooksMockData: BookProps[] = [
     price: 9.99,
     category: "Romance",
     description: "A novel by Jane Austen, published in 1813.",
+    isCheck: false,
   },
   {
     id: 7,
@@ -49,6 +55,7 @@ export const BooksMockData: BookProps[] = [
     price: 13.99,
     category: "Fiction",
     description: "A novel by J.D. Salinger, published in 1951.",
+    isCheck: false,
   },
   {
     id: 8,
@@ -56,6 +63,7 @@ export const BooksMockData: BookProps[] = [
     price: 15.99,
     category: "Fantasy",
     description: "A novel by J.R.R. Tolkien, published in 1937.",
+    isCheck: false,
   },
   {
     id: 9,
@@ -63,6 +71,7 @@ export const BooksMockData: BookProps[] = [
     price: 16.99,
     category: "Philosophical Fiction",
     description: "A novel by Fyodor Dostoevsky, published in 1866.",
+    isCheck: false,
   },
   {
     id: 10,
@@ -70,5 +79,6 @@ export const BooksMockData: BookProps[] = [
     price: 18.99,
     category: "Philosophical Fiction",
     description: "A novel by Fyodor Dostoevsky, published in 1880.",
+    isCheck: false,
   },
 ];

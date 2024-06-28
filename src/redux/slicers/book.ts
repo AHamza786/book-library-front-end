@@ -8,6 +8,7 @@ const initialState: BookState = {
     price: 0,
     category: "",
     description: "",
+    isCheck: false,
   },
 };
 

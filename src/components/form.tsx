@@ -15,7 +15,7 @@ const Form = () => {
 
   const onSubmitHandler = async (values: BookProps) => {
     if (selectedBook?.name) {
-      const updatedBooks = books?.map((book: BookProps) => {
+      const updatedBooks: BookProps[] = books?.map((book: BookProps) => {
         if (book?.id === selectedBook?.id) {
           values.id = selectedBook?.id;
           return values;
@@ -25,7 +25,7 @@ const Form = () => {
       dispatch(setBookData(updatedBooks));
     } else {
       values.id = Math.floor(1000 + Math.random() * 8000);
-      const updatedBooks = [...books, values];
+      const updatedBooks: BookProps[] = [...books, values];
       dispatch(setBookData(updatedBooks));
     }
     dispatch(setIsModalOpen(!isModalOpen));
@@ -38,6 +38,7 @@ const Form = () => {
         category: selectedBook?.category || "",
         price: selectedBook?.price || 0,
         description: selectedBook?.description || "",
+        isCheck: selectedBook?.isCheck || false,
       }}
       onSubmit={onSubmitHandler}
       validationSchema={BookValidationScheme}

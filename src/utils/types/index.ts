@@ -4,6 +4,7 @@ export type BookProps = {
   price: number;
   category: string;
   description: string;
+  isCheck: boolean,
 };
 
 export type BookState = {
