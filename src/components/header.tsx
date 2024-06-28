@@ -11,7 +11,7 @@ const Header = () => {
   const dispatch: any = useDispatch();
 
   return (
-    <div className="flex items-center justify-between pb-5 sm:py-6 px-5 rounded-full shadow-md sticky top-3 sm:top-0 z-20 bg-white">
+    <div className="flex items-center flex-col gap-2 sm:flex-row justify-between pb-5 sm:py-6 px-5 rounded-full shadow-md sticky top-3 sm:top-0 z-20 bg-white">
       <h1 className="text-2xl sm:text-3xl tracking-wider font-bold subpixel-antialiased">
         Book Library
       </h1>
