@@ -25,8 +25,23 @@ const BookList = ({ onClick }: BookListProps) => {
   };
 
   return (
-    <div className="flex flex-col gap-5 py-10">
-      {books?.map((book: BookProps) => (
+    <div className="flex flex-col gap-5 py-10 z-10 bg-white">
+      <div className="border px-5 py-2.5 shadow-md rounded-lg sm:flex flex-col sm:flex-row gap-4 sm:items-center justify-between sticky top-28 z-20 hidden bg-[#5dbea3]">
+        <div className="flex flex-row justify-between flex-[2] items-center">
+          <div className="flex flex-col gap-1">
+            <h1 className="text-lg sm:text-2xl tracking-wider font-semibold subpixel-antialiased text-white">
+              Name
+            </h1>
+          </div>
+        </div>
+        <div className="flex-1 lg:flex-[4] text-white text-lg font-medium">
+          Category
+        </div>
+        <p className="text-base sm:text-lg font-medium subpixel-antialiased text-white flex-[1.5] flex justify-center lg:block">
+          Price
+        </p>
+      </div>
+      {books.map((book: BookProps) => (
         <BookCard
           id={book?.id}
           name={book?.name}

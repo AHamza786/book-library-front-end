@@ -4,3 +4,4 @@ export { default as CustomButton } from "./customButton";
 export { default as Header } from "./header";
 export { default as Form } from "./form";
 export { default as Modal } from "./modal";
+export { default as CustomModal } from "./customModal";
