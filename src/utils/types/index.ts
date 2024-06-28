@@ -11,6 +11,11 @@ export type BookState = {
   selectedBook?: BookProps,
 };
 
+export type ModalState = {
+  isModalOpen: boolean;
+};
+
 export type State = {
   book: BookState;
+  modal: ModalState;
 };

@@ -19,7 +19,7 @@ const CustomButton = ({
 }: CustomButtonProps) => {
   return (
     <button
-      className={`text-xs sm:text-sm border-none box-border text-white cursor-pointer inline-block font-sans font-medium h-10 leading-5 list-none m-0 outline-none py-2.5 px-4 rounded-lg ${hoverBg} ${className}`}
+      className={`text-xs sm:text-sm border-none box-border text-white cursor-pointer inline-block font-sans font-medium sm:h-10 leading-5 list-none m-0 outline-none py-2.5 px-4 rounded-lg ${hoverBg} ${className}`}
       role="button"
       style={{ backgroundColor: background }}
       onClick={(event) => {

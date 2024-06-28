@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { BooksMockData } from "../../constant";
-import { BookState } from "../../types";
+import { BookState, BooksMockData } from "../../utils";
 
 const initialState: BookState = {
   book: BooksMockData,
@@ -33,6 +32,7 @@ const bookSlice = createSlice({
   },
 });
 
-export const { setBookData, setSelectedBook, setInitailState } = bookSlice.actions;
+export const { setBookData, setSelectedBook, setInitailState } =
+  bookSlice.actions;
 
 export default bookSlice.reducer;

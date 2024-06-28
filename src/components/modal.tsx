@@ -1,12 +1,17 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { CrossIcon } from "../assets";
+import { setIsModalOpen } from "../redux/slicers/modal";
+import { State } from "../utils";
 
 type CustomProps = {
   children: React.ReactNode;
-  onClose: () => void;
 };
 
-const CustomModal = ({ onClose, children }: CustomProps) => {
+const CustomModal = ({ children }: CustomProps) => {
+  const { isModalOpen } = useSelector((state: State) => state.modal);
+  const dispatch: any = useDispatch();
+  
   return (
     <div className={`fixed inset-0 z-50 flex items-center justify-center`}>
       {/* Light background overlay */}
@@ -19,7 +24,7 @@ const CustomModal = ({ onClose, children }: CustomProps) => {
         <img
           src={CrossIcon}
           className="h-6 w-6 cursor-pointer absolute top-4 right-4"
-          onClick={onClose}
+          onClick={() => dispatch(setIsModalOpen(!isModalOpen))}
         />
         <div className="bg-white rounded-lg flex  flex-col gap-4 w-full">
           {children}

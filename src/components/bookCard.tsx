@@ -1,7 +1,7 @@
 import React from "react";
 import CustomButton from "./customButton";
 import DeleteIcon from "../assets/deleteIcon.svg";
-import { BookProps as BookTypes } from "../types";
+import { BookProps as BookTypes } from "../utils";
 
 interface BooksProps extends BookTypes {
   onDelete: () => void;

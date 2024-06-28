@@ -1,27 +1,16 @@
 import React from "react";
 import { Formik } from "formik";
-import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { CustomButton } from ".";
-import { BookProps, State } from "../types";
 import { setBookData } from "../redux/slicers/book";
+import { setIsModalOpen } from "../redux/slicers/modal";
+import { BookProps, State, BookValidationScheme } from "../utils";
 
-const BookValidationScheme = Yup.object().shape({
-  name: Yup.string().required().label("Name"),
-  category: Yup.string().required().label("Category"),
-  price: Yup.number().required().label("Price"),
-  description: Yup.string().required().label("Description"),
-});
-
-type FormProps = {
-  onClick: () => void;
-};
-
-
-const Form = ({ onClick }: FormProps) => {
+const Form = () => {
   const { book: books, selectedBook } = useSelector(
     (state: State) => state.book
   );
+  const { isModalOpen } = useSelector((state: State) => state.modal);
   const dispatch: any = useDispatch();
 
   const onSubmitHandler = async (values: BookProps) => {
@@ -39,7 +28,7 @@ const Form = ({ onClick }: FormProps) => {
       const updatedBooks = [...books, values];
       dispatch(setBookData(updatedBooks));
     }
-    onClick();
+    dispatch(setIsModalOpen(!isModalOpen));
   };
 
   return (

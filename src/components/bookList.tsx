@@ -1,16 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BookCard } from ".";
-import { BookProps, State } from "../types";
 import { setBookData, setSelectedBook } from "../redux/slicers/book";
+import { setIsModalOpen } from "../redux/slicers/modal";
+import { BookProps, State } from "../utils";
 
-type BookListProps = {
-  onClick: () => void;
-};
-
-const BookList = ({ onClick }: BookListProps) => {
-  const books = useSelector((state: State) => state.book.book);
-  const selectedBook = useSelector((state: State) => state.book.selectedBook);
+const BookList = () => {
+  const { book: books } = useSelector((state: State) => state.book);
+  const { isModalOpen } = useSelector((state: any) => state.modal);
   const dispatch: any = useDispatch();
 
   const onDeleteHandler = (item: BookProps) => {
@@ -50,7 +47,7 @@ const BookList = ({ onClick }: BookListProps) => {
           category={book?.category}
           onDelete={() => onDeleteHandler(book)}
           onBookSelect={() => {
-            onClick();
+            dispatch(setIsModalOpen(!isModalOpen));
             bookSelectHandler(book);
           }}
         />
